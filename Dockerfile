@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir Pillow
 
 # Download copyparty standalone script
-ADD https://github.com/9001/copyparty/releases/latest/download/copyparty-sfx.py 
+ADD https://github.com/9001/copyparty/releases/latest/download/copyparty-sfx.py copyparty-sfx.py
 
 EXPOSE 3923
 
