@@ -9,10 +9,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir Pillow
 
 # Download copyparty standalone script
-ADD https://github.com /app/copyparty.py
+ADD https://github.com/9001/copyparty/releases/latest/download/copyparty-sfx.py 
 
 EXPOSE 3923
 
 # Start copyparty, mapping the root directory to your S3/R2 storage configuration
-ENTRYPOINT ["python", "/app/copyparty.py", "-v", "s3://$R2_BUCKET:$R2_KEY_ID:$R2_SECRET:$R2_ENDPOINT::r2"]
+ENTRYPOINT ["python", "/copyparty-sfx.py", "-v", "s3://$R2_BUCKET:$R2_KEY_ID:$R2_SECRET:$R2_ENDPOINT::r2"]
 
